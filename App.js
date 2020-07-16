@@ -5,7 +5,7 @@ import LoadingScreen from './screens/LoadingScreen'
 import LoginScreen from './screens/LoginScreen'
 import HomeScreen from './screens/HomeScreen'
 import RegisterScreen from './screens/RegisterScreen'
-import {MessageScreen} from './screens/MessageScreen'
+import MessageScreen from './screens/MessageScreen'
 import PostScreen from './screens/PostScreen'
 import NotificationScreen from './screens/NotificationScreen'
 import ProfileScreen from './screens/ProfileScreen'
@@ -27,7 +27,7 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-const AppTabNavigator =  createStackNavigator(
+const AppTabNavigator =  createBottomTabNavigator(
   {
     Home:{
       screen:HomeScreen,
@@ -36,13 +36,13 @@ const AppTabNavigator =  createStackNavigator(
       }
     },
     Message: {
-      screen:MessageScreen,
+      screen:() => <MessageScreen/>,
       navigationOptions:{
         tabBarIcon:({tintColor})=><Ionicons name="ios-chatboxes" size={24} color={tintColor}/>
       }
     },
     Post: {
-      screen:() =>PostScreen,
+      screen:() => <PostScreen/>,
       navigationOptions:{
         tabBarIcon:({tintColor})=><Ionicons name="ios-add-circle" size={48} color="#E9446A" style={{shadowColor:"#E9446A",shadowOffset:{width:0,height:0},
         shadowRadius:10,shadowOpacity:0.3}}/>

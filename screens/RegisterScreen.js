@@ -36,6 +36,7 @@ export default class RegisterScreen extends React.Component {
                 <TouchableOpacity style={styles.back} onPress={() => this.props.navigation.goBack()} >
                     <Ionicons name="ios-arrow-round-back" size={32} color="#FFF"></Ionicons>
                 </TouchableOpacity>
+                
                 <Text style={styles.greeting}>{'Create New Account'}</Text>
                 
 
